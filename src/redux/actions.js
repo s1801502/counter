@@ -25,15 +25,20 @@ export const incrementAsync = (ms) => ({
     payload: ms
 })
 
-export const calculateAsync = (ms) => {
+export const set = number => ({
+    type: actionTypes.SET,
+    number
+})
+
+export const fetchAsync = () => {
     
     return dispatch => {
-        console.log('hei')
-        
         dispatch(loading())
-        delay(ms).then(() => {
+        fetch('https://qrng.anu.edu.au/API/jsonI.php?length=1&type=uint8')
+        .then(res => res.json())
+        .then(res => {
             dispatch(loading())
-            dispatch(reset())
+            dispatch(set(res.data[0]))
         })
         
     }

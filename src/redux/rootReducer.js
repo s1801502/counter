@@ -27,6 +27,12 @@ const rootReducer = (state = INITIAL_STATE, action) => {
                 counter: 0
             }
 
+        case actionTypes.SET:
+            return {
+                ...state,
+                counter: action.number
+            }
+
         case actionTypes.TOGGLE_LOADING:
             return {
                 ...state,
