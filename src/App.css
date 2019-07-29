@@ -1,11 +1,12 @@
 .App {
   width: 100%;
-  
+  font-family: 'Cinzel', serif;
+  font-size: 2em;
 }
 
 .content {
   margin: 0 auto;
-  width: 300px;
+  width: 400px;
   height: 400px;
   padding: 20px;
   display: flex;

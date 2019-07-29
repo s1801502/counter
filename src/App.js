@@ -11,10 +11,10 @@ function App({loading, add, subtract, reset, incrementAsync}) {
     <div className="App">
     <div className="content">
       <ResultWithSpinner loading={loading} />
-      <Button className="btn" handleClick={add}>Add One</Button>
-      <Button className="btn" handleClick={subtract}>Subtract One</Button>
-      <Button className="btn" handleClick={reset}>Reset To Zero</Button>
-      <Button className="btn" handleClick={() => incrementAsync(3000)}>Async Increment</Button>
+      <Button className="btn" handleClick={add} font="'Cinzel', serif">Add One</Button>
+      <Button className="btn" handleClick={subtract} font="'Cinzel', serif">Subtract One</Button>
+      <Button className="btn" handleClick={reset} font="'Cinzel', serif">Reset To Zero</Button>
+      <Button className="btn" handleClick={() => incrementAsync(2000)} font="'Cinzel', serif">Async Increment</Button>
       
       </div>
       
