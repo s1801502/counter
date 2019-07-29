@@ -15,9 +15,7 @@ function App({loading, add, subtract, reset, incrementAsync}) {
       <Button className="btn" handleClick={subtract} font="'Cinzel', serif">Subtract One</Button>
       <Button className="btn" handleClick={reset} font="'Cinzel', serif">Reset To Zero</Button>
       <Button className="btn" handleClick={() => incrementAsync(2000)} font="'Cinzel', serif">Async Increment</Button>
-      
       </div>
-      
     </div>
   );
 }

@@ -1,10 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import WithSpinner from '../spinner/spinner'
+import { HeaderSecondary, HeaderPrimary, Br } from './result.styles'
 
 const Result = ({ counter }) => (
 
-    <h1>Counter: {counter}</h1>
+    <>
+        <HeaderPrimary>Counter: {counter}</HeaderPrimary>
+        <HeaderSecondary>With Redux</HeaderSecondary>
+        <Br />
+    </>
 )
 
 const mapStateToProps = state => ({
