@@ -1,4 +1,7 @@
 import { actionTypes } from './actionTypes'
+import { persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+
 
 const INITIAL_STATE = {
     counter: 1,
@@ -36,4 +39,9 @@ const rootReducer = (state = INITIAL_STATE, action) => {
     }
 }
 
-export default rootReducer
+const persistConfig = {
+    key: 'root',
+    storage
+}
+
+export default persistReducer(persistConfig, rootReducer)
