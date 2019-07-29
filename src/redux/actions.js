@@ -20,13 +20,18 @@ export const loading = () => ({
     type: actionTypes.TOGGLE_LOADING
 })
 
-export const calculateAsync = () => {
+export const incrementAsync = (ms) => ({
+    type: actionTypes.INCREMENT_ASYNC,
+    payload: ms
+})
+
+export const calculateAsync = (ms) => {
     
     return dispatch => {
         console.log('hei')
         
         dispatch(loading())
-        delay(2000).then(() => {
+        delay(ms).then(() => {
             dispatch(loading())
             dispatch(reset())
         })
