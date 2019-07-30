@@ -11,11 +11,11 @@ const spin = keyframes`
 `
 
 export const Loader = styled.div`
-    border: 10px solid red;
-    border-top: 10px solid blue;
+    border: 10px solid #fff;
+    border-top: 10px solid #111;
     border-radius: 50%;
-    width: 75px;
-    height: 75px;
+    width: 65px;
+    height: 65px;
     animation: ${spin} 1s linear infinite;
 `
 
