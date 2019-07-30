@@ -17,7 +17,7 @@ class Login extends React.Component {
 
             if (user) {
                 const newUser = {
-                    name: user.displayName,
+                    name: user.displayName || 'unknown user',
                     email: user.email
                 }
 

@@ -3,9 +3,6 @@ import { connect } from 'react-redux'
 import Counter from './pages/counter/counter'
 import LoginPage from './pages/login-page/login-page'
 
-
-
-
 import './App.css';
 
 function App({ user }) {
