@@ -1,41 +1,45 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    margin: 50px auto 0 auto;
+    
     width: 400px;
-    height: 200px;
-    padding: 20px;
+    height: 300px;
+    
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     position: relative;
+    
+    
 `
 
 
 export const HeaderPrimary = styled.div`
     text-align: center;
-    font-size: 1.0em;
+    font-size: 2.0em;
     color: black;
     margin: 0;
     padding: 0;
+    margin-bottom: 30px;
     
 `
 
 export const HeaderSecondary = styled.div`
     text-align: center;
-    font-size: 0.5em;
+    font-size: 1em;
     color: #777;
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 0px;
+    top: -20px;
 `
 
 export const Br = styled.div`
     border-bottom: 1px solid #777;
-    width: 120px;
+    width: 150px;
     margin-bottom: 20px;
     position: absolute;
-    top: 20px;
+    top: 0px;
+    
 `

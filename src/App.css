@@ -5,14 +5,18 @@
 
 #root {
   
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   padding: 0;
 }
 
 
 .App {
   font-family: 'Cinzel', serif;
-  font-size: 2em;
+  font-size: 1em;
+  height: 100%;
+  
+  
 }
 
 .content {
@@ -24,6 +28,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  
   
 }
 

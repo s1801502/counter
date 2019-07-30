@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 export const HeaderPrimary = styled.div`
     text-align: center;
-    font-size: 1.5em;
+    font-size: 2.5em;
     color: black;
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ export const HeaderPrimary = styled.div`
 
 export const HeaderSecondary = styled.div`
     text-align: center;
-    font-size: 0.7em;
+    font-size: 1em;
     color: #777;
     margin: 0;
     padding: 0;

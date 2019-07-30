@@ -1,10 +1,10 @@
 import React from 'react'
 import { Container, HeaderPrimary, HeaderSecondary, Br } from './login.styles'
 import { Button } from '@tkerola/button'
-import { signInWithGoogle } from '../../firebase/firebase'
-import { auth } from '../../firebase/firebase'
+import { signInWithGoogle } from '../../../firebase/firebase'
+import { auth } from '../../../firebase/firebase'
 import { connect } from 'react-redux'
-import { addUser } from '../../redux/user/actions'
+import { addUser } from '../../../redux/user/actions'
 
 class Login extends React.Component {
 
@@ -35,7 +35,7 @@ class Login extends React.Component {
         return (
             <Container>
                 <HeaderPrimary>Login With Google</HeaderPrimary>
-                <HeaderSecondary>With Redux</HeaderSecondary>
+                <HeaderSecondary>With Firebase</HeaderSecondary>
                 <Br />
                 <Button
                     bgColor="#4285F4"
