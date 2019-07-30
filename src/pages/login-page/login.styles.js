@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    margin: 0 auto;
+    margin: 50px auto 0 auto;
     width: 400px;
     height: 200px;
     padding: 20px;
@@ -9,7 +9,7 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
+    position: relative;
 `
 
 
@@ -19,7 +19,7 @@ export const HeaderPrimary = styled.div`
     color: black;
     margin: 0;
     padding: 0;
-    position: relative;
+    
 `
 
 export const HeaderSecondary = styled.div`
@@ -29,7 +29,7 @@ export const HeaderSecondary = styled.div`
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 50px;
+    top: 0px;
 `
 
 export const Br = styled.div`
@@ -37,5 +37,5 @@ export const Br = styled.div`
     width: 120px;
     margin-bottom: 20px;
     position: absolute;
-    top: 70px;
+    top: 20px;
 `

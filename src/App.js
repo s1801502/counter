@@ -4,21 +4,27 @@ import Counter from './pages/counter/counter'
 import Login from './pages/login-page/login'
 
 
+
+
 import './App.css';
 
-function App({ name }) {
+function App({ user }) {
 
-  console.log(name)
+  
+  
   return (
     <div className="App">
-      { !name ? <Login /> : <Counter />}
+      
+      { !user ? <Login /> : <Counter />}
       
     </div>
   )
 }
 
 const mapStateToProps = state => ({
-  name: state.user.user
+  user: state.user.user
 })
+
+
 
 export default connect(mapStateToProps)(App)

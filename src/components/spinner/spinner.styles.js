@@ -14,8 +14,8 @@ export const Loader = styled.div`
     border: 10px solid #fff;
     border-top: 10px solid #111;
     border-radius: 50%;
-    width: 65px;
-    height: 65px;
+    width: 45px;
+    height: 45px;
     animation: ${spin} 1s linear infinite;
 `
 

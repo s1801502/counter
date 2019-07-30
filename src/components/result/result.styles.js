@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 
+
+
+
 export const HeaderPrimary = styled.div`
     text-align: center;
     font-size: 1.5em;
@@ -16,7 +19,7 @@ export const HeaderSecondary = styled.div`
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 50px;
+    top: 90px;
 `
 
 export const Br = styled.div`
@@ -24,5 +27,5 @@ export const Br = styled.div`
     width: 150px;
     margin-bottom: 20px;
     position: absolute;
-    top: 75px;
+    top: 115px;
 `
