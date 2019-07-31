@@ -23,8 +23,10 @@ export const Form = styled.form`
 `
 
 export const Input = styled.input`
+    font-family: 'Cinzel', serif;
     border: none;
     border-bottom: 1px solid #999;
+    
 
     &:focus {
         outline: none;

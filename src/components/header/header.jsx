@@ -1,25 +1,37 @@
 import React from 'react'
-import { Container, Logout } from './header.styles'
+import { Container, Logout, SignUpContainer, Span } from './header.styles'
 import { connect } from 'react-redux'
 import { auth } from '../../firebase/firebase'
 import { removeUser } from '../../redux/user/actions'
 
-const Header = ({ name, removeUser }) => {
+const Header = ({ user, removeUser }) => {
 
     const signOut = () => {
         auth.signOut()
         removeUser()
     }
-
-return (
-    <Container>
-        Welcome: {name}
-        <Logout onClick={signOut}>Logout</Logout>
-    </Container>
-)}
+    if (user) {
+        return (
+            <Container>
+                Welcome: {user.name}
+                <Logout onClick={signOut}>Logout</Logout>
+            </Container>
+        )
+    } else {
+        return (
+            <Container>
+                Choose your sign in method
+                <SignUpContainer>
+                    <Span>New user?</Span>
+                    <Logout>Sign up</Logout>
+                </SignUpContainer>
+            </Container>
+        )
+    }
+}
 
 const mapStateToProps = state => ({
-    name: state.user.user.name
+    user: state.user.user
 })
 
 const mapDispatchToProps = dispatch => ({
