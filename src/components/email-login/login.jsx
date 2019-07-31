@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Container, Header, FieldContainer, Form, Input } from './login.styles'
-import { auth } from '../../../firebase/firebase'
+import { auth } from '../../firebase/firebase'
 
 import { Button } from '@tkerola/button'
 

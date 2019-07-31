@@ -1,6 +1,6 @@
 import React from 'react'
-import GoogleLogin from './google-login/login'
-import LoginForm from './email-login/login'
+import GoogleLogin from '../../components/google-login/login'
+import LoginForm from '../../components/email-login/login'
 import { Container } from './login-page.styles'
 
 
