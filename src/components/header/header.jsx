@@ -3,9 +3,10 @@ import { Container, Logout, SignUpContainer, Span } from './header.styles'
 import { connect } from 'react-redux'
 import { auth } from '../../firebase/firebase'
 import { removeUser } from '../../redux/user/actions'
+import { withRouter } from 'react-router'
 
-const Header = ({ user, removeUser }) => {
-
+const Header = ({ user, removeUser, history }) => {
+    
     const signOut = () => {
         auth.signOut()
         removeUser()
@@ -23,7 +24,7 @@ const Header = ({ user, removeUser }) => {
                 Choose your sign in method
                 <SignUpContainer>
                     <Span>New user?</Span>
-                    <Logout>Sign up</Logout>
+                    <Logout onClick={() => history.push('/signUp')} >Sign up</Logout>
                 </SignUpContainer>
             </Container>
         )
@@ -38,4 +39,4 @@ const mapDispatchToProps = dispatch => ({
     removeUser: () => dispatch(removeUser())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header))
