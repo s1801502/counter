@@ -5,7 +5,7 @@ import { auth } from '../../firebase/firebase'
 import { removeUser } from '../../redux/user/actions'
 import { withRouter } from 'react-router'
 
-const Header = ({ user, removeUser, history }) => {
+const Header = ({ user, removeUser, history, location }) => {
     
     const signOut = () => {
         auth.signOut()
@@ -14,11 +14,11 @@ const Header = ({ user, removeUser, history }) => {
     if (user) {
         return (
             <Container>
-                Welcome: {user.name}
+                Welcome: {user.displayName}
                 <Logout onClick={signOut}>Logout</Logout>
             </Container>
         )
-    } else {
+    } else if (location.pathname === '/') {
         return (
             <Container>
                 Choose your sign in method
@@ -26,6 +26,12 @@ const Header = ({ user, removeUser, history }) => {
                     <Span>New user?</Span>
                     <Logout onClick={() => history.push('/signUp')} >Sign up</Logout>
                 </SignUpContainer>
+            </Container>
+        )
+    } else {
+        return (
+            <Container>
+                Fill in the fields to sign up
             </Container>
         )
     }
