@@ -32,6 +32,7 @@ const Header = ({ user, removeUser, history, location }) => {
         return (
             <Container>
                 Fill in the fields to sign up
+                <Logout onClick={() => history.push('/')}>Back</Logout>
             </Container>
         )
     }
