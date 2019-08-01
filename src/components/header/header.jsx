@@ -1,16 +1,18 @@
 import React from 'react'
 import { Container, Logout, SignUpContainer, Span } from './header.styles'
 import { connect } from 'react-redux'
-import { auth } from '../../firebase/firebase'
+import { auth, saveCountToProfile } from '../../firebase/firebase'
 import { removeUser } from '../../redux/user/actions'
 import { withRouter } from 'react-router'
 
-const Header = ({ user, removeUser, history, location }) => {
+const Header = ({ user, counter, removeUser, history, location }) => {
     
-    const signOut = () => {
+    const signOut = async () => {
+        await saveCountToProfile(user.id, counter.counter)
         auth.signOut()
         removeUser()
     }
+
     if (user) {
         return (
             <Container>
@@ -39,7 +41,8 @@ const Header = ({ user, removeUser, history, location }) => {
 }
 
 const mapStateToProps = state => ({
-    user: state.user.user
+    user: state.user.user,
+    counter: state.counter
 })
 
 const mapDispatchToProps = dispatch => ({

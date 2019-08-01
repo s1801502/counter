@@ -13,6 +13,7 @@ export const reset = () => ({
     type: actionTypes.RESET
 })
 
+
 export const loading = () => ({
     type: actionTypes.TOGGLE_LOADING
 })

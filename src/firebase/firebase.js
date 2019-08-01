@@ -36,9 +36,18 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
       console.log(error.message)
     }
 
-    
   }
+  
   return userRef
+}
+
+export const saveCountToProfile = async (id, count) => {
+  
+  const userRef = await firestore.doc(`users/${id}`)
+  
+  await userRef.update({counter: count})
+
+  
 }
 
 export const auth = firebase.auth()

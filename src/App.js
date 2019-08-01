@@ -5,6 +5,7 @@ import LoginPage from './pages/login-page/login-page'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import SignUp from './pages/sign-up-page/sign-up'
 import { addUser } from './redux/user/actions'
+import { set } from './redux/counter/actions'
 import { auth, createUserProfileDocument } from './firebase/firebase'
 
 import './App.css';
@@ -12,7 +13,7 @@ import './App.css';
 class App extends React.Component {
 
 
-  state = { displayName: '' }
+  state = { displayName: '', counter: 0 }
   
   catchDisplayName = displayName => {
     this.setState({ displayName })
@@ -22,12 +23,10 @@ class App extends React.Component {
 
   componentDidMount() {
     
-    const { addUser } = this.props
+    const { addUser, setCounter } = this.props
     
-
     this.unsubFromAuth = auth.onAuthStateChanged(async userAuth => {
       
-
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth, this.state.displayName ? this.state : {})
         this.setState({displayName: ''})
@@ -38,6 +37,9 @@ class App extends React.Component {
             id: snapshot.id,
             ...snapshot.data()
           })
+
+          setCounter(snapshot.data().counter)
+
         })
       } 
       else {
@@ -72,7 +74,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  addUser: user => dispatch(addUser(user))
+  addUser: user => dispatch(addUser(user)),
+  setCounter: number => dispatch(set(number))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
