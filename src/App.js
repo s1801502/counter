@@ -8,6 +8,7 @@ import { addUser } from './redux/user/actions'
 import { set } from './redux/counter/actions'
 import { auth, createUserProfileDocument } from './firebase/firebase'
 
+
 import './App.css';
 
 class App extends React.Component {
@@ -37,9 +38,7 @@ class App extends React.Component {
             id: snapshot.id,
             ...snapshot.data()
           })
-
           setCounter(snapshot.data().counter)
-
         })
       } 
       else {
