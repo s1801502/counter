@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import SortableComponent from '../../components/dragable-button/dragable-button'
+import SortableComponent from '../../components/sortable-component/sortable-component'
 
 import ResultWithSpinner from '../../components/result/result'
 import Header from '../../components/header/header'
@@ -8,10 +8,7 @@ import Header from '../../components/header/header'
 
 
 const Counter = ({ loading }) => {
-
     
-    
-
     return (
         <React.Fragment>
             <Header />

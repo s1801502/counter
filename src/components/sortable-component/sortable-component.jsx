@@ -1,33 +1,9 @@
 import React from 'react'
-import { Button } from '@tkerola/button'
-import { SortableElement, SortableContainer } from 'react-sortable-hoc'
 import arrayMove from 'array-move'
 import { connect } from 'react-redux'
 import { add, subtract, reset, incrementAsync, fetchAsync } from '../../redux/counter/actions'
+import { SortableList } from './sortable-list'
 
-const DragableButton = SortableElement(({ children, ...otherProps }) => {
-
-    return (
-        <li style={{ listStyleType: 'none', cursor: 'grab' }}>
-            <div>
-                <span style={{fontSize: '0.5em'}}>&#9769;</span>
-                <Button {...otherProps}>
-                    {children}
-                </Button>
-            </div>
-        </li>
-    )
-})
-
-const SortableList = SortableContainer(({ buttonProps }) => {
-
-    return (
-        <ul style={{ listStyleType: 'none' }}>
-            {buttonProps.map((item, index) => <DragableButton {...buttonProps[index]} key={index} index={index} />)}
-        </ul>
-
-    )
-})
 
 class SortableComponent extends React.Component {
 
@@ -62,8 +38,7 @@ class SortableComponent extends React.Component {
             font: "Cinzel, serif",
             disabled: this.props.loading,
             children: 'Thunk fetch'
-        }
-        ]
+        }]
     }
 
     onSortEnd = ({ oldIndex, newIndex }) => {
@@ -73,7 +48,6 @@ class SortableComponent extends React.Component {
     }
 
     render() {
-
         return (
             <SortableList buttonProps={this.state.buttonProps} onSortEnd={this.onSortEnd} />
         )
