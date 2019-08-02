@@ -7,7 +7,7 @@ import SignUp from './pages/sign-up-page/sign-up'
 import { addUser } from './redux/user/actions'
 import { set } from './redux/counter/actions'
 import { auth, createUserProfileDocument } from './firebase/firebase'
-import { ClickEffect, Message } from './components/email-login/login.styles'
+import { ClickEffect, Message } from './components/login-animation-styles.js/animation-styles'
 
 
 import './App.css';
