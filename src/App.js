@@ -15,7 +15,7 @@ class App extends React.Component {
 
 
   state = { displayName: '', counter: 0 }
-  
+
   catchDisplayName = displayName => {
     this.setState({ displayName })
   }
@@ -23,28 +23,27 @@ class App extends React.Component {
   unsubFromAuth = null
 
   componentDidMount() {
-    
+
     const { addUser, setCounter } = this.props
-    
+
     this.unsubFromAuth = auth.onAuthStateChanged(async userAuth => {
-      
+
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth, this.state.displayName ? this.state : {})
-        this.setState({displayName: ''})
+        this.setState({ displayName: '' })
 
-        userRef.onSnapshot(snapshot => {  
-          
+        userRef.onSnapshot(snapshot => {
+
           addUser({
             id: snapshot.id,
             ...snapshot.data()
           })
           setCounter(snapshot.data().counter)
         })
-      } 
+      }
       else {
         addUser(userAuth)
       }
-
     })
   }
 
@@ -54,7 +53,7 @@ class App extends React.Component {
 
   render() {
     const { user } = this.props
-    
+
     return (
       <div className="App">
         <Router>
