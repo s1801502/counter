@@ -10,7 +10,7 @@ const DragableButton = SortableElement(({ children, ...otherProps }) => {
     return (
         <li style={{ listStyleType: 'none', cursor: 'grab' }}>
             <div>
-                ...
+                <span style={{fontSize: '0.5em'}}>&#9769;</span>
                 <Button {...otherProps}>
                     {children}
                 </Button>
