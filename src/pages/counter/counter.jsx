@@ -7,11 +7,11 @@ import Header from '../../components/header/header'
 
 
 
-const Counter = ({ loading }) => {
+const Counter = ({ loading, setIsLoggedIn }) => {
     
     return (
         <React.Fragment>
-            <Header />
+            <Header setIsLoggedIn={setIsLoggedIn}/>
             <div className="content">
                 <ResultWithSpinner loading={loading} />
                 <SortableComponent />

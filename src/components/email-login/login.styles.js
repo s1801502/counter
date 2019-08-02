@@ -9,7 +9,7 @@ export const Container = styled.div`
     align-items: center;
     
     height: 300px;
-    overflow: hidden;
+    
 `
 
 export const Header = styled.h2`
@@ -71,24 +71,26 @@ export const Error = styled.div`
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px; 
+    z-index: 50;
+    
 `
 
 export const ClickEffect = styled.div`
   opacity: 0;
   z-index: 0;
-  width: 10px;
-  height: 10px;
+  width: 1px;
+  height: 1px;
   background-color: black;
   transition: transform 0.6s ease-in-out;
-  transform: scale(1);
+  transform: scale(.1);
   position absolute;
-  top: 350px;
-  left: 600px;
+  top: 400px;
+  left: 650px;
   
 
   &.show {
     opacity: 1;
-    transform: scale(200);
+    transform: scale(2000);
     z-index: 10;
   }
 `
@@ -104,7 +106,7 @@ export const Message = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 4rem;
-  transform: scale(0.1);
+  transform: scale(0.01);
   color: white;
 
   &.show {

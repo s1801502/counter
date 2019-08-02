@@ -7,17 +7,37 @@ import SignUp from './pages/sign-up-page/sign-up'
 import { addUser } from './redux/user/actions'
 import { set } from './redux/counter/actions'
 import { auth, createUserProfileDocument } from './firebase/firebase'
+import { ClickEffect, Message } from './components/email-login/login.styles'
 
 
 import './App.css';
 
 class App extends React.Component {
 
+  state = {
+    loginData: {
+      displayName: '',
+      counter: 0
+    },
+    isLoggedIn: false,
+    show: false
+  }
 
-  state = { displayName: '', counter: 0 }
+  toggleShow = () => {
+    this.setState({show: true})
+    setTimeout(() => {
+      this.setState({show: false, isLoggedIn: true})
+      
+    }, 2000)
+
+  }
 
   catchDisplayName = displayName => {
     this.setState({ displayName })
+  }
+
+  setIsLoggedIn = isLoggedIn => {
+    this.setState({ isLoggedIn })
   }
 
   unsubFromAuth = null
@@ -29,11 +49,11 @@ class App extends React.Component {
     this.unsubFromAuth = auth.onAuthStateChanged(async userAuth => {
 
       if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth, this.state.displayName ? this.state : {})
+        const userRef = await createUserProfileDocument(userAuth, this.state.loginData.displayName ? this.state.loginData : {})
         this.setState({ displayName: '' })
-
+        this.toggleShow()
         userRef.onSnapshot(snapshot => {
-
+          
           addUser({
             id: snapshot.id,
             ...snapshot.data()
@@ -53,15 +73,23 @@ class App extends React.Component {
 
   render() {
     const { user } = this.props
+    const { isLoggedIn, show } = this.state
 
     return (
       <div className="App">
         <Router>
           <Switch>
-            <Route exact path="/" render={() => !user ? <LoginPage /> : <Counter />} />
+            <Route exact path="/"
+              render={() => !isLoggedIn ? <LoginPage setIsLoggedIn={this.setIsLoggedIn}
+              /> : <Counter setIsLoggedIn={this.setIsLoggedIn} />} />
+
             <Route exact path="/signUp" render={(props) => <SignUp catchDisplayName={this.catchDisplayName} {...props} />} />
           </Switch>
         </Router>
+        <ClickEffect className={`${show && "show"}`} />
+        <Message className={`${show && "show"}`}>
+          { user && <span>Welcome {user.displayName}</span>}
+        </Message>
       </div>
     )
   }

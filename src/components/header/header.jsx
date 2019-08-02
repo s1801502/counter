@@ -5,11 +5,12 @@ import { auth, saveCountToProfile } from '../../firebase/firebase'
 import { removeUser } from '../../redux/user/actions'
 import { withRouter } from 'react-router'
 
-const Header = ({ user, counter, removeUser, history, location }) => {
+const Header = ({ user, counter, removeUser, history, location, setIsLoggedIn }) => {
     
     const signOut = async () => {
         await saveCountToProfile(user.id, counter.counter)
         auth.signOut()
+        setIsLoggedIn(false)
         removeUser()
     }
 

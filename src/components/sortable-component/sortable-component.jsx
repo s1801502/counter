@@ -49,7 +49,7 @@ class SortableComponent extends React.Component {
 
     render() {
         return (
-            <SortableList buttonProps={this.state.buttonProps} onSortEnd={this.onSortEnd} />
+            <SortableList buttonProps={this.state.buttonProps} onSortEnd={this.onSortEnd} lockAxis="y" />
         )
     }
 }
