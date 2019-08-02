@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 
 export const Container = styled.div`
     
@@ -35,9 +35,20 @@ export const HeaderSecondary = styled.div`
     top: -20px;
 `
 
+const anim = keyframes`
+    0%, 100% {
+        width: 0px;
+    }
+
+    50% {
+        width: 150px;
+    }
+`
+
+
 export const Br = styled.div`
     border-bottom: 1px solid #777;
-    width: 150px;
+    animation: ${anim} 2s infinite;
     margin-bottom: 20px;
     position: absolute;
     top: 0px;

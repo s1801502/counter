@@ -28,9 +28,11 @@ export const Input = styled.input`
     border-bottom: 1px solid #999;
     background-color: white;
     
+    
 
     &:focus {
         outline: none;
+        background-color: none;
     }
 `
 
