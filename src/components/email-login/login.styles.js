@@ -23,17 +23,29 @@ export const Form = styled.form`
 
 `
 
+const inputAnim = keyframes`
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+`
+
 export const Input = styled.input`
     font-family: 'Cinzel', serif;
     border: none;
     border-bottom: 1px solid #999;
     background-color: white;
+    transition: animation 1s ease-in-out;
     
     
 
     &:focus {
         outline: none;
         background-color: none;
+        animation: ${inputAnim} 1s ease-in-out;
     }
 `
 
@@ -65,7 +77,7 @@ const shake = keyframes`
 export const Error = styled.div`
     color: red;
     font-size: 1em;
-    margin-top: 60px;
+    margin-top: 30px;
     text-align: center;
     animation: ${shake} 0.82s cubic-bezier(.36,.07,.19,.97) infinite;
     transform: translate3d(0, 0, 0);

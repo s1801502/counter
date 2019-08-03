@@ -32,8 +32,8 @@ class App extends React.Component {
 
   }
 
-  catchDisplayName = displayName => {
-    this.setState({ displayName })
+  catchDisplayName = name => {
+    this.setState({ loginData: { displayName: name }})
   }
 
   setIsLoggedIn = isLoggedIn => {
@@ -49,9 +49,11 @@ class App extends React.Component {
     this.unsubFromAuth = auth.onAuthStateChanged(async userAuth => {
 
       if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth, this.state.loginData.displayName ? this.state.loginData : {})
-        this.setState({ displayName: '' })
+        const userRef = await createUserProfileDocument(userAuth, 
+          this.state.loginData.displayName ? this.state.loginData : { counter: -1 })
+        
         this.toggleShow()
+
         userRef.onSnapshot(snapshot => {
           
           addUser({
@@ -65,6 +67,8 @@ class App extends React.Component {
         addUser(userAuth)
       }
     })
+
+    this.setState({ displayName: '' })
   }
 
   componentWillUnmount() {
