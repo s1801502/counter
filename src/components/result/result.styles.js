@@ -1,8 +1,5 @@
 import styled, { keyframes } from 'styled-components'
 
-
-
-
 export const HeaderPrimary = styled.div`
     text-align: center;
     font-size: 2.5em;

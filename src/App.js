@@ -33,7 +33,7 @@ class App extends React.Component {
   }
 
   catchDisplayName = name => {
-    this.setState({ loginData: { displayName: name }})
+    this.setState({ loginData: { displayName: name, counter: 0 }})
   }
 
   setIsLoggedIn = isLoggedIn => {
@@ -53,6 +53,7 @@ class App extends React.Component {
           this.state.loginData.displayName ? this.state.loginData : { counter: -1 })
         
         this.toggleShow()
+        this.setState({ loginData: { displayName: '', counter: 0 }})
 
         userRef.onSnapshot(snapshot => {
           
@@ -68,7 +69,7 @@ class App extends React.Component {
       }
     })
 
-    this.setState({ displayName: '' })
+    
   }
 
   componentWillUnmount() {
