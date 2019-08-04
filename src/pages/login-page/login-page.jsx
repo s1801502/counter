@@ -3,7 +3,7 @@ import GoogleLogin from '../../components/google-login/login'
 import LoginForm from '../../components/email-login/login'
 import { Container, Add, HeaderContainer as TitleContainer } from './login-page.styles'
 import Header from '../../components/header/header'
-import { HeaderPrimary as TitlePrimary, HeaderSecondary as TitleSecondary } from './login-page.styles'
+import { HeaderPrimary as TitlePrimary, HeaderSecondary as TitleSecondary, Br } from './login-page.styles'
 
 
 const LoginPage = () => {
@@ -15,7 +15,7 @@ const LoginPage = () => {
             <TitleContainer>
             <TitlePrimary>Counter-App</TitlePrimary>
             <TitleSecondary>For heavy calculus</TitleSecondary>
-            
+            <Br />
             </TitleContainer>
 
             <Add>

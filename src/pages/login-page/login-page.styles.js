@@ -58,20 +58,22 @@ export const HeaderSecondary = styled.div`
 
 const anim = keyframes`
     0%, 100% {
-        width: 0px;
+        transform: scaleX(0);
     }
 
     50% {
-        width: 150px;
+        transform: scaleX(1);
     }
 `
 
 export const Br = styled.div`
     border-bottom: 1px solid #777;
+    width: 40%;
     animation: ${anim} 2s infinite;
     
     position: absolute;
     top: 5px;
-    left: 35%;
+    left: 30%;
+    
 `
 
