@@ -16,8 +16,8 @@ class Login extends React.Component {
         return (
             <Container>
                 <HeaderPrimary>Login With Google</HeaderPrimary>
-                <HeaderSecondary>With Firebase</HeaderSecondary>
-                <Br />
+                
+                
                 <Button
                     bgColor="#4285F4"
                     bgHover="white"

@@ -4,7 +4,8 @@ export const Container = styled.div`
     height: 70%;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: start;
+    margin-top: 50px;
     
    
 `
@@ -29,7 +30,7 @@ export const HeaderContainer = styled.div`
     position: relative;
     width: 40%;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 `
 
 export const HeaderPrimary = styled.div`
@@ -49,7 +50,7 @@ export const HeaderSecondary = styled.div`
     
     padding: 0;
     position: absolute;
-    top: -15px;
+    top: -17px;
     left: 50%;
     transform: translateX(-50%);
     
